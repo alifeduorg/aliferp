@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     var password = document.getElementById("password").value;
 
     // Send POST request to the Google Apps Script to validate login
-    fetch('https://script.google.com/macros/s/AKfycby8t-K4jxhAbYTpxlPu54vGXbTE29FlmM77vwBvTdGzrvnuK1bEr_PVolaQOk7MPZIFjw/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbzri07nVtHmuY4tbRc_c3tnOOf8szTJQRYDBVhDpCja/dev/exec', {
         method: 'POST',
         body: JSON.stringify({ staffId: staffId, password: password }),
         headers: { 'Content-Type': 'application/json' }
