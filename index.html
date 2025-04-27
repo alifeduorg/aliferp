@@ -2,26 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alif ERP - Login</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-
   <div class="login-container">
-    <img src="1.png" alt="ALIF ERP" class="logo">
-    <h2>Welcome Back, Teacher!</h2>
-
-    <form id="loginForm">
-      <input type="text" id="staffId" placeholder="Staff ID" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-    </form>
-
-    <p class="footer-text">Powered by Alif Edu</p>
+    <h2>Teacher Login</h2>
+    <input type="text" id="staffId" placeholder="Enter Staff ID" />
+    <input type="password" id="password" placeholder="Enter Password" />
+    <button onclick="login()">Login</button>
   </div>
 
-  <script src="js/login.js"></script>
+  <script>
+    // JavaScript function to authenticate user via Google Apps Script
+    function authenticateTeacher(staffId, password) {
+      fetch('https://script.google.com/macros/s/AKfycbwI8iMUa3OXO2bseDn8wfjj4RSkHMXAG97179bP0twY8mfab0bm-YGuu70niRslop45fA/exec?staffId=' + staffId + '&password=' + password)
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert("Login Successful");
+            // Redirect to logbook page or dashboard
+            window.location.href = "dashboard.html"; // Replace with your actual page URL
+          } else {
+            alert("Invalid Staff ID or Password");
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
 
+    // Function that gets triggered when Login button is clicked
+    function login() {
+      const staffId = document.getElementById("staffId").value;
+      const password = document.getElementById("password").value;
+      
+      // Ensure staffId and password are not empty
+      if (staffId === "" || password === "") {
+        alert("Please enter both Staff ID and Password");
+      } else {
+        authenticateTeacher(staffId, password); // Authenticate the user
+      }
+    }
+  </script>
 </body>
 </html>
+
