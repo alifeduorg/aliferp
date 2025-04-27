@@ -9,7 +9,7 @@
         /* General body styling */
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #6a11cb, #2575fc); /* Subtle gradient */
+            background: linear-gradient(to right, #002F6C, #FFD700); /* Navy Blue to Golden Yellow gradient */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,10 +43,12 @@
 
         /* Heading styling */
         h2 {
-            color: #333;
-            font-size: 28px;
+            color: #002F6C; /* Navy Blue color for heading */
+            font-size: 32px;
             margin-bottom: 20px;
-            font-weight: 500;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Input field styling */
@@ -62,8 +64,8 @@
         }
 
         .input-field:focus {
-            border-color: #2575fc;
-            box-shadow: 0 0 8px rgba(37, 117, 252, 0.6);
+            border-color: #FFD700; /* Golden Yellow color for focus */
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
             background-color: #fff;
         }
 
@@ -71,9 +73,9 @@
         .login-button {
             width: 100%;
             padding: 14px;
-            background-color: #2575fc;
+            background-color: #FFD700; /* Golden Yellow */
             border: none;
-            color: white;
+            color: #002F6C; /* Navy Blue */
             font-size: 18px;
             border-radius: 8px;
             cursor: pointer;
@@ -81,7 +83,7 @@
         }
 
         .login-button:hover {
-            background-color: #1e60c4;
+            background-color: #FFA500; /* Darker golden for hover */
             box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
         }
 
@@ -108,7 +110,7 @@
 
         .footer-text a {
             text-decoration: none;
-            color: #2575fc;
+            color: #FFD700;
         }
     </style>
 </head>
@@ -117,9 +119,11 @@
 
     <div class="login-container">
         <!-- Logo -->
-        <img src="1.png" alt="Logo" class="logo">
+        <img src="path_to_your_logo.png" alt="Logo" class="logo">
 
-        <h2>Login to your account</h2>
+        <!-- Heading -->
+        <h2>Welcome Back! Log In to Your Dashboard</h2>
+
         <form id="loginForm">
             <input type="text" id="staffId" class="input-field" placeholder="Staff ID" required><br>
             <input type="password" id="password" class="input-field" placeholder="Password" required><br>
