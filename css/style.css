@@ -1,0 +1,69 @@
+/* Common reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  background: linear-gradient(to bottom right, #001F54, #003080);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Login Box */
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 320px;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #001F54;
+  margin-bottom: 20px;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #FFC300;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #e0a800;
+}
+
+.footer-text {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #555;
+}
