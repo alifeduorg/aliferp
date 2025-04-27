@@ -9,7 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     return;
   }
 
-  fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbwuTGphCBTYyoYXcBawh6U53She23mIcDAqSY--hYmZMsVcrQ4kxFt9RmBQgf_HDtznig/exec', {
     method: 'POST',
     body: JSON.stringify({
       type: "login",
