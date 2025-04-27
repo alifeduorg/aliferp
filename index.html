@@ -7,81 +7,105 @@
     <title>Login</title>
     <!-- Internal CSS -->
     <style>
-        /* Common reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body */
-  body {
-    background: linear-gradient(to bottom right, #001F54, #003080);
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Login Box */
-  .login-container {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    text-align: center;
-    width: 320px;
-  }
-  
-  .logo {
-    width: 100px;
-    margin-bottom: 20px;
-  }
-  
-  h2 {
-    color: #001F54;
-    margin-bottom: 20px;
-  }
-  
-  form input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-  
-  form button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    background-color: #FFC300;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  form button:hover {
-    background-color: #e0a800;
-  }
-  
-  .footer-text {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #555;
-  }
-  
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #007BFF, #00C6FF);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Login container styling */
+        .login-container {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Logo styling */
+        .logo {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+
+        /* Heading styling */
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        /* Input field styling with 3D effect */
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Button styling with 3D effect */
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 6px #999;
+            transition: all 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 10px #666;
+            transform: translateY(-2px);
+        }
+
+        .login-button:active {
+            box-shadow: 0 4px #666;
+            transform: translateY(2px);
+        }
+
+        /* Error message styling */
+        .error-message {
+            color: red;
+            text-align: center;
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* 3D input field effect */
+        .input-field:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+        }
     </style>
 </head>
 
 <body>
+
     <div class="login-container">
+        <!-- Logo -->
+        <img src="path_to_your_logo.png" alt="Alif Edu Logo" class="logo">
         <h2>Login</h2>
         <form id="loginForm">
             <input type="text" id="staffId" class="input-field" placeholder="Staff ID" required><br>
@@ -106,7 +130,7 @@
             };
 
             // Fetch request to Google Apps Script Web App
-            fetch('https://script.google.com/macros/s/AKfycbwI8iMUa3OXO2bseDn8wfjj4RSkHMXAG97179bP0twY8mfab0bm-YGuu70niRslop45fA/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbzri07nVtHmuY4tbRc_c3tnOOf8szTJQRYDBVhDpCja/dev', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
