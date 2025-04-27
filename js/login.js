@@ -1,37 +1,25 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault();
+const loginData = {
+    staffId: document.getElementById('staffId').value.trim(),
+    password: document.getElementById('password').value.trim()
+};
 
-  var staffId = document.getElementById('staffId').value.trim();
-  var password = document.getElementById('password').value.trim();
-
-  if (staffId === "" || password === "") {
-    alert("Please fill all fields!");
-    return;
-  }
-
-  fetch('https://script.google.com/macros/s/AKfycbwuTGphCBTYyoYXcBawh6U53She23mIcDAqSY--hYmZMsVcrQ4kxFt9RmBQgf_HDtznig/exec', {
+fetch('https://script.google.com/macros/s/AKfycbwuTGphCBTYyoYXcBawh6U53She23mIcDAqSY--hYmZMsVcrQ4kxFt9RmBQgf_HDtznig/exec', {
     method: 'POST',
-    body: JSON.stringify({
-      type: "login",
-      staffId: staffId,
-      password: password
-    }),
     headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(res => res.json())
-  .then(data => {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(loginData)
+})
+.then(response => response.json())
+.then(data => {
     if (data.success) {
-      // Save login details (if needed)
-      localStorage.setItem('staffId', staffId);
-      window.location.href = "dashboard.html"; // Redirect to dashboard
+        window.location.href = 'dashboard.html';  // Redirect to the dashboard
     } else {
-      alert("Invalid Staff ID or Password!");
+        document.getElementById('errorMessage').style.display = 'block';  // Show error
     }
-  })
-  .catch(error => {
+})
+.catch(error => {
     console.error('Error:', error);
-    alert("Something went wrong. Try again later!");
-  });
+    document.getElementById('errorMessage').textContent = 'An error occurred during login. Please try again.';
+    document.getElementById('errorMessage').style.display = 'block';
 });
