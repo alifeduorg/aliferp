@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,94 +8,107 @@
     <style>
         /* General body styling */
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #007BFF, #00C6FF);
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Subtle gradient */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
 
         /* Login container styling */
         .login-container {
-            background-color: white;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
+            max-width: 380px;
             text-align: center;
+            box-sizing: border-box;
         }
 
         /* Logo styling */
         .logo {
             width: 150px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(360deg); /* Simple logo hover effect */
         }
 
         /* Heading styling */
         h2 {
             color: #333;
-            margin-bottom: 30px;
-            font-size: 24px;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 500;
         }
 
-        /* Input field styling with 3D effect */
+        /* Input field styling */
         .input-field {
             width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+            padding: 14px;
+            margin: 15px 0;
+            border: 2px solid #ddd;
             border-radius: 8px;
-            box-sizing: border-box;
             font-size: 16px;
-            transition: all 0.3s ease;
+            transition: 0.3s ease;
+            background-color: #f9f9f9;
         }
 
         .input-field:focus {
-            border-color: #007BFF;
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            border-color: #2575fc;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.6);
+            background-color: #fff;
         }
 
-        /* Button styling with 3D effect */
+        /* Button styling */
         .login-button {
             width: 100%;
-            padding: 15px;
-            background-color: #007BFF;
+            padding: 14px;
+            background-color: #2575fc;
             border: none;
             color: white;
             font-size: 18px;
             border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 6px #999;
             transition: all 0.3s ease;
         }
 
         .login-button:hover {
-            background-color: #0056b3;
-            box-shadow: 0 10px #666;
-            transform: translateY(-2px);
+            background-color: #1e60c4;
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
         }
 
         .login-button:active {
-            box-shadow: 0 4px #666;
             transform: translateY(2px);
+            box-shadow: none;
         }
 
         /* Error message styling */
         .error-message {
-            color: red;
+            color: #f44336;
             text-align: center;
             display: none;
             margin-top: 10px;
             font-size: 14px;
         }
 
-        /* 3D input field effect */
-        .input-field:focus {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+        /* Footer text */
+        .footer-text {
+            font-size: 14px;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        .footer-text a {
+            text-decoration: none;
+            color: #2575fc;
         }
     </style>
 </head>
@@ -105,14 +117,18 @@
 
     <div class="login-container">
         <!-- Logo -->
-        <img src="1.png" alt="Alif Edu Logo" class="logo">
-        <h2>TEACHER LOGIN</h2>
+        <img src="path_to_your_logo.png" alt="Logo" class="logo">
+
+        <h2>Login to your account</h2>
         <form id="loginForm">
             <input type="text" id="staffId" class="input-field" placeholder="Staff ID" required><br>
             <input type="password" id="password" class="input-field" placeholder="Password" required><br>
             <button type="submit" class="login-button">Login</button>
             <div id="errorMessage" class="error-message">Invalid Staff ID or Password</div>
         </form>
+
+        <!-- Footer -->
+        <p class="footer-text">Forgot password? <a href="#">Reset it here</a></p>
     </div>
 
     <!-- Internal JavaScript -->
@@ -154,6 +170,6 @@
                 });
         });
     </script>
-</body>
 
+</body>
 </html>
