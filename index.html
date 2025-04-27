@@ -29,20 +29,22 @@
             max-width: 400px;
             text-align: center;
             box-sizing: border-box;
-        }
-
-        /* Logo styling */
-        .logo {
-            width: 150px;
-            margin-bottom: 20px;
+            position: relative;
         }
 
         /* Heading styling */
         h2 {
-            color: #FFD700; /* Golden Yellow color */
+            color: #FFD700; /* Golden Yellow */
             font-size: 32px;
             margin-bottom: 20px;
             font-weight: bold;
+        }
+
+        /* Login text styling */
+        .welcome-text {
+            color: #002F6C; /* Navy Blue */
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
         /* Input field styling */
@@ -83,6 +85,21 @@
             box-shadow: none;
         }
 
+        /* Footer with "Powered by Alif Edu" */
+        .footer-text {
+            font-size: 14px;
+            color: #777;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer-text a {
+            text-decoration: none;
+            color: #FFD700; /* Golden Yellow */
+        }
+
         /* Error message styling */
         .error-message {
             color: #f44336;
@@ -90,30 +107,14 @@
             margin-top: 10px;
             font-size: 14px;
         }
-
-        /* Footer text */
-        .footer-text {
-            font-size: 14px;
-            color: #777;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .footer-text a {
-            text-decoration: none;
-            color: #FFD700;
-        }
     </style>
 </head>
 
 <body>
 
     <div class="login-container">
-        <!-- Logo -->
-        <img src="1.png" alt="Logo" class="logo">
-
-        <!-- Heading -->
-        <h2>Welcome to Alif Edu</h2>
+        <!-- Welcome message -->
+        <div class="welcome-text">Welcome back, Teacher!</div>
 
         <form id="loginForm">
             <input type="text" id="staffId" class="input-field" placeholder="Staff ID" required><br>
@@ -121,52 +122,11 @@
             <button type="submit" class="login-button">Login</button>
             <div id="errorMessage" class="error-message">Invalid Staff ID or Password</div>
         </form>
+
+        <!-- Footer with "Powered by Alif Edu" -->
+        <div class="footer-text">
+            <p>Powered by <a href="#">Alif Edu</a></p>
+        </div>
     </div>
 
-    <!-- Footer with "Powered by Alif Edu" -->
-    <div class="footer-text">
-        <p>Powered by <a href="#">Alif Edu</a></p>
-    </div>
-
-    <!-- Internal JavaScript -->
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent form submission
-
-            const staffId = document.getElementById('staffId').value;
-            const password = document.getElementById('password').value;
-
-            // Create data object
-            const loginData = {
-                staffId: staffId,
-                password: password
-            };
-
-            // Fetch request to Google Apps Script Web App
-            fetch('https://script.google.com/macros/s/AKfycbzri07nVtHmuY4tbRc_c3tnOOf8szTJQRYDBVhDpCja/dev', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(loginData)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Redirect to the dashboard
-                        window.location.href = 'dashboard.html';
-                    } else {
-                        // Show error message
-                        document.getElementById('errorMessage').style.display = 'block';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('errorMessage').textContent = 'An error occurred during login. Please try again.';
-                    document.getElementById('errorMessage').style.display = 'block';
-                });
-        });
-    </script>
-
-</body>
-</html>
+    <!-- Internal Java
