@@ -9,7 +9,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     console.log("Password:", password);  // Log password for debugging
 
     // Send POST request to the Google Apps Script to validate login
-    fetch('https://script.google.com/macros/s/AKfycby8t-K4jxhAbYTpxlPu54vGXbTE29FlmM77vwBvTdGzrvnuK1bEr_PVolaQOk7MPZIFjw/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwI8iMUa3OXO2bseDn8wfjj4RSkHMXAG97179bP0twY8mfab0bm-YGuu70niRslop45fA/exec', {
         method: 'POST',
         body: JSON.stringify({ staffId: staffId, password: password }),
         headers: { 'Content-Type': 'application/json' }
