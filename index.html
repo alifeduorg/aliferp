@@ -16,6 +16,7 @@
             height: 100vh;
             margin: 0;
             overflow: hidden;
+            flex-direction: column;
         }
 
         /* Login container styling */
@@ -95,6 +96,7 @@
             font-size: 14px;
             color: #777;
             margin-top: 20px;
+            text-align: center;
         }
 
         .footer-text a {
@@ -119,9 +121,11 @@
             <button type="submit" class="login-button">Login</button>
             <div id="errorMessage" class="error-message">Invalid Staff ID or Password</div>
         </form>
+    </div>
 
-        <!-- Footer -->
-        <p class="footer-text">Forgot password? <a href="#">Reset it here</a></p>
+    <!-- Footer with "Powered by Alif Edu" -->
+    <div class="footer-text">
+        <p>Powered by <a href="#">Alif Edu</a></p>
     </div>
 
     <!-- Internal JavaScript -->
