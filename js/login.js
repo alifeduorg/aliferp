@@ -1,5 +1,5 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent default form submission
+  event.preventDefault(); // Prevent the default form submission behavior (page refresh)
   
   // Get the input values
   var staffId = document.getElementById('staffId').value;
@@ -19,7 +19,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     },
     body: JSON.stringify(data)  // Send the login data
   })
-  .then(response => response.json())
+  .then(response => response.json())  // Parse the JSON response
   .then(responseData => {
     if (responseData.success) {
       // If login is successful, redirect to the dashboard page
